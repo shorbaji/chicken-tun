@@ -1,0 +1,8 @@
+(compile -s -O3 -d1 tun.scm -j tun)
+(compile -s tun.import.scm -O3 -d0)
+
+(install-extension
+ 'tun
+ '("tun.so" "tun.import.so")
+ '((version "0.1")))
+

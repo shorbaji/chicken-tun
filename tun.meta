@@ -1,0 +1,6 @@
+((license "BSD")
+ (category net)
+ (needs defstruct socket  ioctl)
+ (test-depends test)
+ (author "Omar Shorbaji")
+ (synopsis "library to set up Linux TUN/TAP interfaces"))
