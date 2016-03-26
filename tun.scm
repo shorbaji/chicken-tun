@@ -45,7 +45,10 @@
 				  (pointer-u8-ref (pointer+ p 17)))))
   
   (define (get-ifreq-mac p)
-    (map (lambda (n) (pointer-u8-ref (pointer+ p (+ 18 n)))) (iota 6)))
+    (fold (lambda (n acc) (+ (* acc 256)
+			     (pointer-u8-ref (pointer+ p (+ 18 n)))))
+	  0
+	  (iota 6)))
 
   (define (get-ifreq-name p)
     (list->string
